@@ -1,13 +1,20 @@
-# Local environment and virtual environments
-.venv/
-venv/
-env/
+# Root repo local artifacts
+.devcontainer/
+.vscode/
+.idea/
 __pycache__/
 *.py[cod]
 *.pyc
 *.log
+*.tmp
+*.bak
 
-# Large local media and models
+# Local environment folders
+.venv/
+venv/
+env/
+
+# Large local media and model artifacts
 models/
 *.onnx
 *.pth
@@ -20,11 +27,10 @@ models/
 *.jpg
 *.jpeg
 
-# Editor artifacts
-.vscode/
-.idea/
-.tmp/
-temp/
-
-# OS files
-.DS_Store
+# Ignore the vendored app subtree and its local downloads
+/deep-live-cam-lite/.venv/
+/deep-live-cam-lite/venv/
+/deep-live-cam-lite/env/
+/deep-live-cam-lite/models/
+/deep-live-cam-lite/.pytest_cache/
+/deep-live-cam-lite/__pycache__/
