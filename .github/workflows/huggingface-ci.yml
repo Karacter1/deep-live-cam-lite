@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HF_TOKEN: ${{ secrets.HF_TOKEN || vars.HF_TOKEN }}
+      INSTALL_GPU: ${{ secrets.INSTALL_GPU || vars.INSTALL_GPU || '0' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,6 +28,11 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install -r requirements.txt
           python -m pip install -r requirements-hf.txt
+
+      - name: Install GPU packages
+        if: env.INSTALL_GPU == '1'
+        run: |
+          python -m pip install -r requirements-gpu.txt
 
       - name: Verify Hugging Face stack imports
         run: |

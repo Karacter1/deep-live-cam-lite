@@ -19,6 +19,14 @@ source .venv/bin/activate
 python -m pip install --upgrade pip setuptools wheel
 python -m pip install -r requirements.txt
 
+if [ "${INSTALL_GPU:-0}" = "1" ]; then
+  if [ -f requirements-gpu.txt ]; then
+    python -m pip install -r requirements-gpu.txt
+  else
+    echo "requirements-gpu.txt not found; skipping GPU-specific install." >&2
+  fi
+fi
+
 if [ "${INSTALL_HF:-0}" = "1" ]; then
   python -m pip install -r requirements-hf.txt
   if [ -n "${HF_TOKEN:-}" ]; then

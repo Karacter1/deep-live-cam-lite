@@ -107,6 +107,12 @@ bash pinokio_run.sh
 
 Set `INSTALL_HF=1` and provide `HF_TOKEN` if you want the Hugging Face runtime stack installed during startup.
 
+Set `INSTALL_GPU=1` to add GPU-specific support packages when your environment has CUDA or GPU acceleration available:
+
+```bash
+INSTALL_GPU=1 INSTALL_HF=1 HF_TOKEN=your_token bash pinokio_run.sh
+```
+
 ## 9. What to expect
 
 ### Localhost URL / endpoint
