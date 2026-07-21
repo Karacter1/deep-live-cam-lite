@@ -1,5 +1,5 @@
 {
-  "name": "karadfl-devcontainer",
+  "name": "deep-live-cam-lite-devcontainer",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
