@@ -23,5 +23,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . /workspaces/karadfl
-WORKDIR /workspaces/karadfl
+COPY . /workspaces/deep-live-cam-lite
+WORKDIR /workspaces/deep-live-cam-lite

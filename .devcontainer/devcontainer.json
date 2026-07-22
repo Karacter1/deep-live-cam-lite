@@ -16,7 +16,19 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "charliermarsh.ruff"
-      ]
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/deep-live-cam-lite/.venv/bin/python"
+      }
+    }
+  },
+  "forwardPorts": [7860, 8000],
+  "portsAttributes": {
+    "7860": {
+      "label": "App preview"
+    },
+    "8000": {
+      "label": "Local API"
     }
   },
   "postCreateCommand": "bash .devcontainer/post-create.sh",
